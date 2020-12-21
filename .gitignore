@@ -1,0 +1,10 @@
+.DS_Store
+
+# ughhh, javascript:
+
+javascript/*/node_modules
+
+*.eslintrc
+*.npmrc
+*.json
+babel.config.js
