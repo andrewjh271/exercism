@@ -7,17 +7,12 @@ export class Matrix {
     return this.text
                .split("\n")
                .map(row => row.split(' ')
-                              .map(element => +element));
+                              .map(element => Number(element)));
   }
 
   get columns() {
-    const cols = []
-    this.rows.forEach(row => {
-      row.forEach((element, index) => {
-        cols[index] ??= []
-        cols[index].push(element)
-      })
-    })
-    return cols;
+    return this.rows[0]
+               .map((_element, index) => this.rows.map(row => row[index])
+            );
   }
 }
