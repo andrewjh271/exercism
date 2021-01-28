@@ -7,7 +7,7 @@ export class Matrix {
     return this.text
                .split("\n")
                .map(row => row.split(' ')
-                              .map(element => Number(element)));
+                              .map(Number));
   }
 
   get columns() {
