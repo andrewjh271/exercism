@@ -1,9 +1,9 @@
-export const rows = (line) => {
-  if(line === 0) return [];
-  let array = rows(line - 1);
-  let last = array[array.length - 1] || [];
-  let current = last.map((element, index) =>
-    element + (last[index - 1] || 0)
-  ).concat(1);
-  return array.concat([current]);
-}
+export const rows = (row) => {
+  if (row === 0) return [];
+  const triangle = rows(row - 1);
+  const lastRow = triangle[triangle.length - 1] || [];
+  const nextRow = lastRow
+    .map((element, index) => element + (lastRow[index - 1] || 0))
+    .concat(1);
+  return [...triangle, nextRow];
+};
