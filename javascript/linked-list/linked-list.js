@@ -7,6 +7,11 @@
 import Node from './node';
 
 export class LinkedList {
+  constructor() {
+    this.first = null;
+    this.last = null;
+  }
+
   push(value) {
     if (this.isEmpty()) {
       const node = new Node({ value });
